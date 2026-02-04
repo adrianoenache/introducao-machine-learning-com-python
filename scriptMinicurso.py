@@ -182,7 +182,7 @@ logico = pd.Series([True, False, True, False, False])
 print(logico)
 
 # dtype: bool - indica que são argumentos lógicos
-                     
+
 #%% Importando a base de dados
 
 # Comumente, os bancos de dados ficam armazenados em objetos do tipo DataFrame
@@ -257,9 +257,9 @@ selecao_var = selecao_var.drop(columns=['classe'])
 sobreviveu = titanic[titanic['sobreviveu'] == 'sim']
 sobreviveu = titanic[titanic['sobreviveu'] != 'nao']
 
-# Adultos do sexo masculino 
+# Adultos do sexo masculino
 
-masc_adultos = (titanic[(titanic['sexo'] == 'masculino') & 
+masc_adultos = (titanic[(titanic['sexo'] == 'masculino') &
                         (titanic['idade'] >= 18)])
 
 # Mulheres ou crianças
@@ -369,7 +369,7 @@ titanic = pd.read_excel('titanic.xlsx')
 
 #%% Gráfico de barras para contagem
 
-# Vamos iniciar por uma variável qualitativa 
+# Vamos iniciar por uma variável qualitativa
 # Como é variável categórica, vamos criar um gráfico de contagem (countplot)
 # Neste caso, o gráfico apresentará a contagem em cada categoria da variável
 
@@ -414,7 +414,7 @@ plt.show()
 
 #%% Gráfico de barras geral
 
-# Valor médio da tarifa em cada local de embarque 
+# Valor médio da tarifa em cada local de embarque
 
 dados = titanic[['embarque', 'valor_tarifa']].groupby(by=['embarque']).mean()
 
@@ -459,7 +459,7 @@ plt.figure(figsize=(15,9), dpi=600)
 sns.scatterplot(data=titanic[titanic['valor_tarifa']<100], x='idade', y='valor_tarifa')
 plt.show()
 
-# Existe alguma relação entre as variáveis? 
+# Existe alguma relação entre as variáveis?
 
 plt.figure(figsize=(15,9), dpi=600)
 sns.regplot(data=titanic[titanic['valor_tarifa']<100], x='idade', y='valor_tarifa')
@@ -470,7 +470,7 @@ plt.show()
 # Na forma de cores dos pontos ("hue")
 
 plt.figure(figsize=(15,9), dpi=600)
-sns.scatterplot(data=titanic[titanic['valor_tarifa']<100], x='idade', y='valor_tarifa', 
+sns.scatterplot(data=titanic[titanic['valor_tarifa']<100], x='idade', y='valor_tarifa',
                 hue='classe', hue_order=['primeira', 'segunda', 'terceira'])
 plt.title('Titanic',fontsize=20)
 plt.xlabel('Idade',fontsize=15)
